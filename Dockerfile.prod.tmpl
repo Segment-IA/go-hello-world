@@ -1,0 +1,12 @@
+# Dockerfile.prod.tmpl
+FROM golang:1.23-alpine AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -o {{BINARY_NAME}} ./cmd/{{PROJECT_NAME}}
+
+FROM alpine:latest
+WORKDIR /app
+COPY --from=builder /app/{{BINARY_NAME}} ./{{BINARY_NAME}}
+CMD ["./{{BINARY_NAME}}"]
