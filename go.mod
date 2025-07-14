@@ -1,3 +1,3 @@
-module github.com/example/myproject
+module github.com/example/hello-world
 
 go 1.24
