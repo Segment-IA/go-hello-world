@@ -2,8 +2,13 @@
 FROM golang:1.24-alpine AS dev
 WORKDIR /app
 COPY go.mod  ./
+
+COPY . .
 RUN go mod tidy
 RUN go mod download
-COPY . .
+RUN go get github.com/stretchr/testify
+
+RUN go test -v ./...
+
 RUN go install github.com/air-verse/air@latest
-CMD ["air"]
+CMD ["/bin/sh", "-c", "go test -v ./... && air"]
