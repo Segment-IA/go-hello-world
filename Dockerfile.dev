@@ -5,8 +5,7 @@ COPY go.mod  ./
 
 COPY . .
 RUN go mod tidy
-RUN go mod download
-RUN go get github.com/stretchr/testify
+#RUN go mod download
 
 RUN go test -v ./...
 
