@@ -1,0 +1,45 @@
+# Go build
+/bin/
+/bin
+/build/
+/tmp/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go modules
+/go.sum
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.local
+.env
+.env.*
+.docker/
+
+# Logs
+*.log
+
+# Test output
+coverage.out
+
+# Ignore Air reload binary
+cmd/hello-world/tmp/
+
+# Ignore vendor if not using vendoring
+/vendor/

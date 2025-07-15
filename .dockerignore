@@ -1,0 +1,26 @@
+# Ignore the following files and directories for Docker builds
+.git
+.gitignore
+Dockerfile.dev
+Dockerfile.prod
+README.md
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+node_modules
+.tmp
+.air.toml
+.devcontainer
+devcontainer.json
+docker-compose.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+config.yaml
+go.mod
+go.sum
+main_test.go
+service_test.go
+integration_test.go
