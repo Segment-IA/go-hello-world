@@ -1,11 +1,18 @@
 # Dockerfile.dev.tmpl
 FROM golang:1.24-alpine AS dev
+
 WORKDIR /app
-COPY go.mod  ./
+
+# Instala dependências necessárias antes de copiar o código completo
+# RUN go get github.com/stretchr/testify@v1.10.0
+# RUN go get github.com/davecgh/go-spew
 
 COPY . .
+
+COPY go.mod   ./
+
 RUN go mod tidy
-#RUN go mod download
+# RUN go mod download
 
 RUN go test -v ./...
 
